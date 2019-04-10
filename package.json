@@ -24,6 +24,7 @@
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-eslint": "^10.0.1",
     "chai": "^4.1.2",
+    "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
     "less": "^3.0.4",
@@ -42,7 +43,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/ca-conventional-changelog"
+      "path": "./node_modules/cz-conventional-changelog"
     }
   }
 }

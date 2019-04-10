@@ -39,5 +39,10 @@
       "vue-cli-service lint",
       "git add"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/ca-conventional-changelog"
+    }
   }
 }

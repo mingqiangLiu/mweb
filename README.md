@@ -1,4 +1,4 @@
-# mmweb
+# mweb
 
 ## Project setup
 ```

@@ -2,14 +2,14 @@ let baseUrl = '/api' // 本地代理
 /* eslint-disable */
 
 switch (process.env.NODE_ENV) {
-  case 'dev':
-    baseUrl = 'http://testserver.qiuduoduo.cn:9080/' // 测试环境url
+  case 'development':
+    baseUrl = 'https://www.easy-mock.com/mock/5caabda8c7cd3e64b617ecc7/example/mock' // 测试环境url
     break
-  case 'pre':
-    baseUrl = 'https://pre-server.qiuduoduo.cn' // 预上线环境url
+  case 'preonline':
+    baseUrl = 'https://www.easy-mock.com/mock/5caabda8c7cd3e64b617ecc7/example/mock' // 预上线环境url
     break
   case 'production':
-    baseUrl = 'https://api.qiuduoduo.cn' // 生产环境url
+    baseUrl = 'https://www.easy-mock.com/mock/5caabda8c7cd3e64b617ecc7/example/mock' // 生产环境url
     break
 }
 

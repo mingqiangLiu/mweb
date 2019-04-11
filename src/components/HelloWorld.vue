@@ -45,22 +45,9 @@ export default {
     this.matches()
   },
   methods: {
-     matches() {
-        let paramss = {
-            type: 'zc'
-          }
-        this.$api.matches.matches({type: 'zc'})
-      // 这里用try catch包裹，请求失败的时候就执行catch里的
-    /*  try {
-        let params = {
-          type: 'zc'
-        }
-        let res = await this.$api.matches.matches(params)
-        console.log(1212121212)
-        console.log('​getMatches -> res', res)
-      } catch (e) {
-        console.log('​catch -> e', e)
-      }*/
+    async matches() {        
+         let myData = await this.$api.matches.matches();
+         console.log(myData.data.projects)
     }
   }
 }

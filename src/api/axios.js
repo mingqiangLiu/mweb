@@ -1,5 +1,4 @@
 import axios from 'axios'
-import store from '@/store'
 
 // 创建 axios 实例
 let service = axios.create({
@@ -18,18 +17,11 @@ service.interceptors.request.use(
       // post、put 提交时，将对象转换为string, 为处理Java后台解析问题
       config.data = JSON.stringify(config.data)
     }
-    // loading + 1
-    store.dispatch('SetLoading', true)
     // 请求发送前进行处理
     return config
   },
   (error) => {
     // 请求错误处理
-    // loading 清 0
-    setTimeout(function() {
-      store.dispatch('SetLoading', 0)
-    }, 300)
-
     return Promise.reject(error)
   }
 )
@@ -37,13 +29,7 @@ service.interceptors.request.use(
 // 添加响应拦截器
 service.interceptors.response.use(
   (response) => {
-    let { data, headers } = response
-
-    if (headers['x-auth-token']) {
-      data.token = headers['x-auth-token']
-    }
-    // loading - 1
-    store.dispatch('SetLoading', false)
+    let { data } = response
     return data
   },
   (error) => {
@@ -63,9 +49,6 @@ service.interceptors.response.use(
         msg: statusText
       }
     }
-    // loading - 1
-    store.dispatch('SetLoading', false)
-    return Promise.reject(info)
   }
 )
 

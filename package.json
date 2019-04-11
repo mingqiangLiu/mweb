@@ -5,6 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:dev": "vue-cli-service build --mode dev",
+    "build:pre": "vue-cli-service build --mode pre",
     "lint": "vue-cli-service lint",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit",
@@ -47,7 +49,6 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "build:dev": "vue-cli-service build --mode dev",
-  "build:pre": "vue-cli-service build --mode pre"
+  }
+  
 }
